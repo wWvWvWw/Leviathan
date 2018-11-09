@@ -45,6 +45,7 @@ if ( ! function_exists( 'nicks_theme_setup' ) ) :
 		// This theme uses wp_nav_menu() in one location.
 		register_nav_menus( array(
 			'menu-1' => esc_html__( 'Primary', 'nicks_theme' ),
+			'footer-menu' => esc_html__( 'Footer', 'nicks_theme')
 		) );
 
 		/*
@@ -122,7 +123,7 @@ add_action( 'widgets_init', 'nicks_theme_widgets_init' );
 function nicks_theme_scripts() {
 	wp_enqueue_style( 'nicks_theme-style', get_stylesheet_uri() );
 
-	wp_enqueue_script( 'nicks_theme-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
+	wp_enqueue_script( 'nicks_theme-navigation', get_template_directory_uri() . '/js/custom-navigation.js', array(), '20151215', true );
 
 	wp_enqueue_script( 'nicks_theme-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
 
@@ -158,4 +159,3 @@ require get_template_directory() . '/inc/customizer.php';
 if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
-

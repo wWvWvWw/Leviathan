@@ -16,8 +16,14 @@
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="profile" href="https://gmpg.org/xfn/11">
+	<link rel="stylesheet" href="https://use.typekit.net/icy0dnp.css">
 
 	<?php wp_head(); ?>
+	<script>
+function myFunction(x) {
+    x.classList.toggle("change");
+}
+</script>
 </head>
 
 <body <?php body_class(); ?>>
@@ -45,12 +51,17 @@
 		</div><!-- .site-branding -->
 
 		<nav id="site-navigation" class="main-navigation">
-			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'nicks_theme' ); ?></button>
+			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false" >
+				<div class="hamburger-container" onclick="myFunction(this)">
+					<div class="hamburger-bar1"></div>
+  				<div class="hamburger-bar2"></div>
+  				<div class="hamburger-bar3"></div>
+				</div>
+			</button>
 			<?php
 			wp_nav_menu( array(
 				'theme_location' => 'menu-1',
-				'menu_id'        => 'primary-menu',
-			) );
+				'menu_id'        => 'primary-menu',	) );
 			?>
 		</nav><!-- #site-navigation -->
 	</header><!-- #masthead -->

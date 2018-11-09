@@ -14,18 +14,16 @@
 	</div><!-- #content -->
 
 	<footer id="colophon" class="site-footer">
+		<nav class="footer-navigation">
+			<?php
+			wp_nav_menu( array(
+				'theme_location' => 'footer-menu',
+				'menu_id'        => 'footer-menu',
+			) );
+			?>
+		</nav><!-- #site-navigation -->
 		<div class="site-info">
-			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'nicks_theme' ) ); ?>">
-				<?php
-				/* translators: %s: CMS name, i.e. WordPress. */
-				printf( esc_html__( 'Proudly powered by %s', 'nicks_theme' ), 'WordPress' );
-				?>
-			</a>
-			<span class="sep"> | </span>
-				<?php
-				/* translators: 1: Theme name, 2: Theme author. */
-				printf( esc_html__( 'Theme: %1$s by %2$s.', 'nicks_theme' ), 'nicks_theme', '<a href="http://underscores.me/">nick</a>' );
-				?>
+			Website made by <a href="#">Kent &amp; Sussex IT Services</a>
 		</div><!-- .site-info -->
 	</footer><!-- #colophon -->
 </div><!-- #page -->

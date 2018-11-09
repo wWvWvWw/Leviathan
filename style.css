@@ -386,6 +386,8 @@ template {
 	display: none;
 }
 
+:focus{outline:inherit;}
+
 /*--------------------------------------------------------------
 # Typography
 --------------------------------------------------------------*/
@@ -395,11 +397,14 @@ input,
 select,
 optgroup,
 textarea {
-	color: #404040;
-	font-family: sans-serif;
-	font-size: 16px;
+	color: #3c3c3c;
+	font-family: myriad-pro, sans-serif;
+	font-weight: 400;
+	font-style: normal;
+	font-size: 14px;
 	font-size: 1rem;
 	line-height: 1.5;
+	text-align:center;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -614,15 +619,15 @@ textarea {
 ## Links
 --------------------------------------------------------------*/
 a {
-	color: royalblue;
+	color: inherit;
 }
 
 a:visited {
-	color: purple;
+	color: inherit;
 }
 
 a:hover, a:focus, a:active {
-	color: midnightblue;
+	color: #707070;
 }
 
 a:focus {
@@ -643,21 +648,27 @@ a:hover, a:active {
 	width: 100%;
 }
 
-.main-navigation ul {
-	display: none;
+.main-navigation ul, .footer-navigation ul{
 	list-style: none;
 	margin: 0;
 	padding-left: 0;
+}
+
+.main-navigation ul{
+	display: none;
 }
 
 .main-navigation ul ul {
 	box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
 	float: left;
 	position: absolute;
-	top: 100%;
-	left: -999em;
-	z-index: 99999;
+	display:none;
+	top:1.5em;
+	left:-999em;
+	z-index:99999
 }
+
+
 
 .main-navigation ul ul ul {
 	left: -999em;
@@ -681,26 +692,69 @@ a:hover, a:active {
 .main-navigation li {
 	float: left;
 	position: relative;
+	padding:0 22px;
 }
 
-.main-navigation a {
+
+.menu-main-menu-container{width:100%;}
+
+nav a {
 	display: block;
 	text-decoration: none;
+	padding:2px;
 }
 
 /* Small menu. */
 .menu-toggle,
 .main-navigation.toggled ul {
 	display: block;
+	border: 0;
+  background: #fff;
 }
+
+.menu-toggle{
+	margin-left:auto;
+}
+
+.hamburger-container {
+	display: inline-block;
+  cursor: pointer;
+}
+
+.hamburger-bar1, .hamburger-bar2, .hamburger-bar3 {
+    width: 20px;
+    height: 2px;
+    background-color: #333;
+    margin: 4px 0;
+    transition: 0.4s;
+}
+
+.change .hamburger-bar1 {
+    -webkit-transform: rotate(-45deg) translate(-9px, 2px);
+    transform: rotate(-45deg) translate(-9px, 2px);;
+}
+
+.change .hamburger-bar2 {opacity: 0;}
+
+.change .hamburger-bar3 {
+    -webkit-transform: rotate(45deg) translate(-6px, 0px);
+    transform: rotate(45deg) translate(-6px, 0px);
+}
+
 
 @media screen and (min-width: 37.5em) {
 	.menu-toggle {
 		display: none;
 	}
-	.main-navigation ul {
-		display: block;
+	.main-navigation{
+		display:flex;justify-content:center;
 	}
+	.main-navigation ul {
+		display: flex;
+    justify-content: center;
+    margin: auto;
+	}
+
 }
 
 .site-main .comment-navigation, .site-main
@@ -982,4 +1036,26 @@ object {
 .gallery-caption {
 	display: block;
 }
------------------
+
+/*--------------------------------------------------------------
+## Branding
+--------------------------------------------------------------*/
+
+img.custom-logo {
+	width:128px;height:auto;
+	margin:auto;margin-top:20px;
+}
+
+
+/*--------------------------------------------------------------
+## Footer
+--------------------------------------------------------------*/
+
+.footer-navigation ul {
+	display:flex;
+	justify-content:center;
+}
+
+.footer-navigation ul li {
+	padding: 0 22px;
+}
